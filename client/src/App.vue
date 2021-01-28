@@ -2,6 +2,7 @@
   <div>
     <h1>Fruits Of The World!</h1>
     <div>
+      
       <fruits-list :fruits="fruits"></fruits-list>
      
       <modal name='fruit-modal' width="750" height="auto" :adaptive="true" :scrollable="true" :reset="true">

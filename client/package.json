@@ -11,12 +11,12 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "cors": "^2.8.5",
+    "highcharts": "^8.2.2",
+    "leaflet": "^1.7.1",
     "vue": "^2.6.11",
     "vue-js-modal": "^2.0.0-rc.6",
-    "leaflet": "^1.7.1",
-    "vue2-leaflet": "^2.6.0",
-    "highcharts": "^8.2.2",
-    "vue2-highcharts": "^1.2.5"
+    "vue2-highcharts": "^1.2.5",
+    "vue2-leaflet": "^2.6.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
