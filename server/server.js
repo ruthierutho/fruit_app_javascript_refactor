@@ -8,7 +8,6 @@ const createRouter = require('./helpers/create_router.js');
 app.use(bodyParser.json());
 app.use(cors());
 
-
 MongoClient.connect('mongodb+srv://ruth:ruth123@cluster0.5eooe.mongodb.net/fruits?retryWrites=true&w=majority')
     .then((client) => {
         const db = client.db('fruits');
@@ -17,7 +16,6 @@ MongoClient.connect('mongodb+srv://ruth:ruth123@cluster0.5eooe.mongodb.net/fruit
         app.use('/api/fruits', fruitsRouter);
     })
     .catch(console.err);
-
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(__dirname + '/public/'));
