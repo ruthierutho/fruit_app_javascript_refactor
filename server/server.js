@@ -1,16 +1,15 @@
 const express = require('express');
 const app = express();
-
 const cors = require('cors');
-app.use(cors());
-
 const bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
 const createRouter = require('./helpers/create_router.js');
 
 app.use(bodyParser.json());
+app.use(cors());
 
-MongoClient.connect('mongodb://localhost:27017')
+
+MongoClient.connect('mongodb+srv://ruth:ruth123@cluster0.5eooe.mongodb.net/fruits?retryWrites=true&w=majority')
 .then((client) => {
     const db = client.db('fruits');
     const fruitsCollection = db.collection('fruits');
