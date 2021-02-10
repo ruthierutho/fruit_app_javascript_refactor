@@ -57,7 +57,7 @@ export default {
   color: orange;
 }
 #mapid {
-  width: 730px;
+  min-width:400px;
   height: 400px;
   justify-content: center;
   align-content: center;

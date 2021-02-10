@@ -7,7 +7,7 @@
 
       <modal
         name="fruit-modal"
-        width="750"
+        width="700"
         height="auto"
         :adaptive="true"
         :scrollable="true"
@@ -391,9 +391,10 @@ export default {
 
     eventBus.$on("fruit-map-selected", (fruit) => {
       this.selectedFruit = fruit;
-      this.updateFruitData();
+       this.updateFruitData(fruit);
       this.show();
     });
+
     eventBus.$on("fruit-selected", (fruit) => {
       this.selectedFruit = fruit;
       this.updateFruitData(fruit);
@@ -401,10 +402,7 @@ export default {
     });
   },
   methods: {
-    // fetchFruits() {
-    //   FruitService.getFruits()
-    //     .then(fruits => this.fruits = fruits);
-    // },
+  
     show() {
       this.$modal.show("fruit-modal");
     },
@@ -435,7 +433,7 @@ export default {
 <style>
 div > h1 {
   font-family: "Montserrat", sans-serif;
-  font-size: 60pt;
+  font-size: 50pt;
   border: 1px;
   background-color: rgb(253, 243, 129);
   padding: 20px;
@@ -458,7 +456,6 @@ div > h1 {
   border: 0px;
   font-size: 35px;
   text-emphasis: bold;
-  margin-left: 700px;
   padding-top: 0px;
   padding-bottom: 0px;
 }
@@ -472,6 +469,7 @@ div > h1 {
   height: 100%;
   background-color: rgba(253, 243, 129, 0.906);
   justify-content: center;
+  
 }
 
 body {

@@ -47,12 +47,6 @@ export default {
   background-color: rgba(253, 243, 129, 0.906);
   color: orange;
 }
-#mapid {
-  height: 360px;
-  width: 650px;
-  justify-content: center;
-  align-content: center;
-}
 
 .tooltip {
   font-family: "Montserrat", sans-serif;

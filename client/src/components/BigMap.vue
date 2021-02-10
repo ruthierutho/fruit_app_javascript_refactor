@@ -10,7 +10,7 @@
           :key="index"
           :fruit="fruit"
           :lat-lng="[fruit.origin.latitude, fruit.origin.longitude]"
-          v-on:click="handleMapClick(fruit)"
+          @click=handleMapClick(fruit)
         >
           <l-icon
             class="map-icon"
@@ -27,22 +27,25 @@
 <script>
 import { L, icon } from "leaflet";
 import { LMap, LTileLayer, LMarker, LIcon, LTooltip } from "vue2-leaflet";
-import { eventBus } from "../main";
+
+import { eventBus } from "../main.js";
 
 export default {
   name: "big-map",
-  props: ["fruits", "fruit"],
+  props: ["fruits"],
+
+  methods: {
+    handleMapClick(fruit) {
+      eventBus.$emit("fruit-map-selected", fruit);
+    },
+  },
+
   components: {
     LMap,
     LTileLayer,
     LMarker,
     LIcon,
     LTooltip,
-  },
-  methods: {
-    handleMapClick(fruit) {
-      eventBus.$emit("fruit-map-selected", this.fruit);
-    },
   },
 };
 </script>

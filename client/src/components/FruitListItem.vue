@@ -21,7 +21,7 @@ export default {
 <style>
 
 li {
-    width: 80%;
+    min-width: 325px;
     border: 1px;
     background-color: rgb(253, 243, 129);
     padding: 20px;
