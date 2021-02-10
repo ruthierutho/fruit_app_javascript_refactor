@@ -2,7 +2,7 @@
   <div>
     <h1>Fruits Of The World!</h1>
     <div>
-      
+      <big-map :fruits="fruits"/>
       <fruits-list :fruits="fruits"></fruits-list>
      
       <modal name='fruit-modal' width="750" height="auto" :adaptive="true" :scrollable="true" :reset="true">
@@ -24,6 +24,7 @@ import FruitsList from './components/FruitsList.vue';
 import FruitDetail from './components/FruitDetail.vue';
 import FruitService from '@/services/FruitService';
 import PieChart from "./components/PieChart.vue";
+import BigMap from "./components/BigMap.vue";
 
 export default {
   name: "app",
@@ -102,7 +103,7 @@ export default {
   components: {
     "fruits-list": FruitsList,
     "fruit-detail": FruitDetail,
-    
+    "big-map": BigMap,
     "pie-chart": PieChart
   }
 }
