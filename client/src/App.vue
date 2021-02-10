@@ -2,7 +2,7 @@
   <div>
     <h1>Fruits Of The World!</h1>
     <div>
-      <big-map :fruits="fruits" />
+      <big-map :fruits="fruits"></big-map>
       <fruits-list :fruits="fruits"></fruits-list>
 
       <modal
@@ -388,9 +388,15 @@ export default {
   mounted() {
     // this.fetchFruits();
 
-    eventBus.$on("fruit-selected", (fruit) => {
+
+    eventBus.$on("fruit-map-selected", (fruit) => {
       this.selectedFruit = fruit;
       this.updateFruitData();
+      this.show();
+    });
+    eventBus.$on("fruit-selected", (fruit) => {
+      this.selectedFruit = fruit;
+      this.updateFruitData(fruit);
       this.show();
     });
   },
@@ -405,11 +411,11 @@ export default {
     hide() {
       this.$modal.hide("fruit-modal");
     },
-    updateFruitData() {
+    updateFruitData(fruit) {
       const updatedData = [
-        ["Carbohydrates", this.selectedFruit.nutritions.carbohydrates],
-        ["Fat", this.selectedFruit.nutritions.fat],
-        ["Protein", this.selectedFruit.nutritions.protein],
+        ["Carbohydrates", fruit.nutritions.carbohydrates],
+        ["Fat", fruit.nutritions.fat],
+        ["Protein", fruit.nutritions.protein],
       ];
       this.pieOptions.series[0].data = updatedData;
       this.chartKey += 1;
@@ -445,7 +451,7 @@ div > h1 {
 
 #close {
   font-family: "Montserrat", sans-serif;
-  background-color: rgba(253, 243, 129, 0.961);
+  background-color: rgba(253, 243, 129, 0.906);
   color: rgb(255, 153, 0);
   border-block-color: rgb(255, 153, 0);
   border-radius: 5px;

@@ -25,20 +25,12 @@
 </template>
 
 <script>
-import PieChart from "./PieChart.vue";
-// import { LMap, LTileLayer, LMarker, LIcon, LTooltip } from "vue2-leaflet";
-// import { L, icon } from "leaflet";
 
 export default {
   name: "fruit-detail",
   props: ["fruit"],
   components: {
-    "pie-chart": PieChart,
-    // LMap,
-    // LTileLayer,
-    // LMarker,
-    // LIcon,
-    // LTooltip,
+  
   },
 };
 </script>
